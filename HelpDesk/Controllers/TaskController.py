@@ -50,3 +50,14 @@ class TaskController:
 
         except:
             return  f"Ошибка при удалении"
+
+if __name__ == "__main__":
+    print(TaskController.create(
+        topic='Не устанавливается red os',
+        description='Ошибка при первоначальной установки red os',
+        path='-',
+        priority='Высокий',
+        status='В работе'
+
+
+    ))
