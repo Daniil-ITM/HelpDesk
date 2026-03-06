@@ -56,3 +56,23 @@ HelpDesk/
   ```bash
   python Models/create_table.py
   ```
+
+## Функционал кода ##
+### Работа с пользователями ###
+отвечает UserController
+```python
+# регистрация пользователя администратора
+from Controllers.UserController import UserController
+UserController.registration(
+        login='admin2',
+        password='102030',
+        role='Специалист'
+    )
+# Вывод списка пользователей
+for row in UserController.get():
+        print(row.id, row.login, row.password, row.role, row.is_active, row.fullname)
+# Обновить данные пользователей
+UserController.update(2,login = "User")
+```
+## Лицензия
+Проект находится в разработке
