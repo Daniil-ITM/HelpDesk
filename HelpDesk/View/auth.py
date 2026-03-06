@@ -58,7 +58,20 @@ class authView(Tk):
         window_auth = regView()
         self.destroy()
 
-
+    # def auth(self, login, password):
+    #     '''
+    #
+    #     :param login:
+    #     :param password:
+    #     :return:
+    #     '''
+    #     self.login = self.login.get()
+    #     self.password = self.password.get()
+    #     User.select().where(User.login == login) & (User.password == password).first()
+    #
+    #     if User:
+    #         messagebox.showinfo("Успех", "Авторизация прошла успешно")
+    #     else: messagebox.showerror("Ошибка","Неверный логин или пароль")
 
 
 # if __name__ == "__main__":

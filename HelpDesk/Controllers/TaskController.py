@@ -32,7 +32,7 @@ class TaskController:
     @classmethod
     def update(cls,id,topic):
         # Обновить запись по id
-        Task.update({Task.name:topic}).where(Task.id == id).execute()
+        Task.update({Task.topic:topic}).where(Task.id == id).execute()
 
     @classmethod
     def delete(cls,id):
@@ -61,3 +61,9 @@ if __name__ == "__main__":
 
 
     ))
+
+# Вывод списка заявок
+for row in TaskController.get():
+        print(row.id, row.topic, row.description, row.path, row.priority, row.status,row.user_id,row.speciality_id,row.category_id)
+# Обновить данные заявки
+TaskController.update('','')

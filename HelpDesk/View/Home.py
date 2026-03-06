@@ -33,14 +33,14 @@ class HomeView(Tk):
 
 
         self.buttos_frame = ttk.Frame(self.home)
-        self.buttos_frame.pack()
+        self.buttos_frame.pack(anchor="se")
 
         self.title_Home = ttk.Label(self.home,text="Статьи")
         self.title_Home.pack()
-        self.reg = Button(self.buttos_frame,text='Зарегистрироваться',command=self.move)
-        self.reg.grid(row=0,column=6,sticky='e',padx=5,pady=5)
-        self.enter = Button(self.buttos_frame, text='Вход', command=self.move_enter )
-        self.enter.grid(row=0,column=8,sticky='w',padx=5,pady=5)
+        self.reg = Button(self.buttos_frame,text='Зарегистрироваться',command=self.move,width=15,height=1)
+        self.reg.grid(row=1,column=8,sticky='e',padx=5,pady=5)
+        self.enter = Button(self.buttos_frame, text='Вход', command=self.move_enter,width=15,height=1 )
+        self.enter.grid(row=1,column=9,sticky='e',padx=5,pady=5)
         self.statie1 = ttk.Label(self.home, text='gehhrfnnrnrnrnrnr')
         self.statie1.pack(anchor="sw")
         self.statie2 = ttk.Label(self.home, text='gegegebbfbfbfb')
