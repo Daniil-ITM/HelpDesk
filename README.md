@@ -41,6 +41,21 @@ HelpDesk/
 - **PyMySQL** - библиотека для подключения к СУБД
 
 ### Модели ###
+### Task(Заявки) ###
+- `id` - первичный ключ
+- `topic` - тема заявки
+- `description` - описание 
+- `path` - путь к файлу
+- `priority` - приоритет: 'Низкий','Средний','Высокий'
+- `status` - Статус: 'Новая','В работе','Выполнена'
+- `user_id` - внешний ключ
+- `speciality_id` - внешний ключ
+- `category_id` - внешний ключ
+### Category(Категории) ###
+- `id` - первичный ключ
+- `name` - Название категории
+### create_table ###
+Создание таблицы
 #### User(Пользователи)
 - `id` - первичный ключ
 - `login` - логин уникальный, максимум 12 символов
@@ -73,6 +88,47 @@ for row in UserController.get():
         print(row.id, row.login, row.password, row.role, row.is_active, row.fullname)
 # Обновить данные пользователей
 UserController.update(2,login = "User")
+
+
+```
+### Работа с заявками ###
+отвечает TaskController
+```python
+# Создание заявки
+from  Controllers.TaskController import TaskController
+TaskController.create(
+        topic='Не устанавливается red os',
+        description='Ошибка при первоначальной установки red os',
+        path='-',
+        priority='Высокий',
+        status='В работе'
+
+
+    )
+# Вывод списка заявок
+for row in TaskController.get():
+        print(row.id, row.topic, row.description, row.path, row.priority, row.status,row.user_id,row.speciality_id,row.category_id)
+# Обновить данные заявки
+TaskController.update('','')
+# Удалить заявку
+TaskController.delete(7)
+```
+### Работа с Категориями ###
+отвечает CategoryController
+```python
+# Создание категории
+from  Controllers.CategoryController import CategoryController
+CategoryController.create(
+          name=''
+)
+# Вывод список категорий
+for row in CategoryController.get():
+        print(row.id, row.name)
+# Обновить данные категорий
+CategoryController.update(1,'')
+# Удалить категорию
+CategoryController.delete(7)
+
 ```
 ## Лицензия
 Проект находится в разработке
