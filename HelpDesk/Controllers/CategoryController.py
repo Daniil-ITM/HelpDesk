@@ -59,9 +59,9 @@ class CategoryController:
 
 
 if __name__ == "__main__":
-    print(CategoryController.create(
-        name='Синий экран смерти'
-
-    ))
-    # print(CategoryController.delete(3))
+    # print(CategoryController.create(
+    #     name='gegegegeg'
+    #
+    # ))
+    print(CategoryController.delete(7))
     # print(CategoryController.update(1,''))

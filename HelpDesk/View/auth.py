@@ -46,14 +46,21 @@ class authView(Tk):
         self.login.pack()
         self.pas = ttk.Label(self.input_get_user, text='Пароль')
         self.pas.pack()
-        self.password = ttk.Entry(self.input_get_user)
+        self.password = ttk.Entry(self.input_get_user,show='*')
         self.password.pack()
         self.vxod = ttk.Button(self.input_get_user,text='Войти')
         self.vxod.pack()
-        self.reg = ttk.Label(self.input_get_user, text='Нет аккаунта?')
+        self.reg = Button(self.input_get_user, text='Нет аккаунта?',command=self.move,borderwidth=0)
         self.reg.pack()
 
+    def move(self):
+        from View.registration import regView
+        window_auth = regView()
+        self.destroy()
 
-if __name__ == "__main__":
-    window = authView()
-    window.mainloop()
+
+
+
+# if __name__ == "__main__":
+#     window = authView()
+#     window.mainloop()
